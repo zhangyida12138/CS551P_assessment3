@@ -1,82 +1,104 @@
-import random
-import decimal
+import csv
 import sqlite3
-from datetime import datetime
-from faker import Faker
-from faker.providers import address, internet, person
+# set csv file path and SQLite db path
+csv_file_path = 'CS551P_assessment3/csv/bookdata.csv'
+sqlite_db_path = 'CS551P_assessment3/shopping_data.db'
 
-conn = sqlite3.connect('shopping_data.db', detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
-cur = conn.cursor()
-fake = Faker()
+# connect with SQLite db
+conn = sqlite3.connect(sqlite_db_path)
+cursor=conn.cursor()
 
 # drop the tables - use this order due to foreign keys - so that we can rerun the file as needed without repeating values
-conn.execute('DROP TABLE IF EXISTS line_items')
-conn.execute('DROP TABLE IF EXISTS carts')
-conn.execute('DROP TABLE IF EXISTS orders')
-conn.execute('DROP TABLE IF EXISTS products')
-conn.execute('DROP TABLE IF EXISTS customers')
+conn.execute('DROP TABLE IF EXISTS authors')
+conn.execute('DROP TABLE IF EXISTS categories')
+conn.execute('DROP TABLE IF EXISTS books')
 
-#create the tables again - create them in reverse order of deleting due to foreign keys
+# create table
+#  Author table.
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS authors (
+        author_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT UNIQUE NOT NULL
+    )
+''')
 
-conn.execute('CREATE TABLE customers (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, address TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL)')
-conn.execute('CREATE TABLE products ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price REAL, created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL)')
-conn.execute('CREATE TABLE carts (id INTEGER PRIMARY KEY AUTOINCREMENT, product_id INTEGER, quantity INTEGER, created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, FOREIGN KEY(product_id) REFERENCES products(id) )')
-conn.execute('CREATE TABLE orders ( id INTEGER PRIMARY KEY AUTOINCREMENT, customer_id INTEGER, created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, FOREIGN KEY(customer_id) REFERENCES customers(id) )')
-conn.execute('CREATE TABLE line_items ( id INTEGER PRIMARY KEY AUTOINCREMENT, quantity INTEGER, product_id INTEGER, cart_id INTEGER, order_id INTEGER, created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, FOREIGN KEY(product_id) REFERENCES products(id), FOREIGN KEY(cart_id) REFERENCES carts(id), FOREIGN KEY(order_id) REFERENCES orders(id) )')
+# Categories table.
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS categories (
+        category_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        category_name TEXT UNIQUE NOT NULL
+    )
+''')
 
-# create some customers
-for i in range(10):
-    name = fake.name()
-    email = fake.ascii_free_email()
-    address = fake.address()
-    cur.execute('INSERT INTO customers VALUES(NULL,?,?,?,?)', (name, email, address, datetime.now()))
-    conn.commit()
+# Books table.
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS books (
+      asin TEXT PRIMARY KEY,
+      title TEXT NOT NULL,
+      author_id INTEGER,
+      imgUrl TEXT,
+      productURL TEXT,
+      publishedDate TEXT,
+      category_id INTEGER,
+      stars REAL,
+      price REAL,
+      isBestSeller BOOLEAN,
+      isEditorsPick BOOLEAN,
+      isGoodReadsChoice BOOLEAN,
+      soldBy TEXT,
+      FOREIGN KEY (author_id) REFERENCES authors (author_id),
+      FOREIGN KEY (category_id) REFERENCES categories (category_id)
+    )
+''')
 
-# create some products
-for i in range(10):
-    name = fake.catch_phrase()
-    price = int( decimal.Decimal(random.randrange(155,899))/100)
-    cur.execute('INSERT INTO products VALUES(NULL,?,?,?)', (name, price, datetime.now()))
-    conn.commit()
+# Function to get or create author_id and return it.
+def get_or_create_author_id(author_name):
+    cursor.execute('SELECT author_id FROM authors WHERE name = ?', (author_name,))
+    result = cursor.fetchone()
+    if result:
+        return result[0]
+    else:
+        cursor.execute('INSERT INTO authors (name) VALUES (?)', (author_name,))
+        return cursor.lastrowid
 
-# create some carts 
-cur.execute('select * from products')
-products = cur.fetchall()
-product_id_list = []
-for product in products:
-    product_id_list.append(product[0])
+# Function to get or create category_id and return it.
+def get_or_create_category_id(category_name):
+    cursor.execute('SELECT category_id FROM categories WHERE category_name = ?', (category_name,))
+    result = cursor.fetchone()
+    if result:
+        return result[0]
+    else:
+        cursor.execute('INSERT INTO categories (category_name) VALUES (?)', (category_name,))
+        return cursor.lastrowid
 
-for i in range(10):
-    random_id = random.randint(1,9)
-    product_id = product_id_list[random_id]
-    quantity = random.randrange(1,42)
-    cur.execute('INSERT INTO carts VALUES(NULL,?,?,?)', (product_id, quantity, datetime.now()))
-    conn.commit()
+# Read the CSV file and insert the data into the tables.
+with open(csv_file_path, 'r', encoding='utf-8') as csvfile:
+    csvreader = csv.DictReader(csvfile)
+    count = 0  # Counter to ensure only 6000 records are imported.
 
-# create orders from customers
-cur.execute('select * from customers')
-customers = cur.fetchall()
-for customer in customers:  
-    for i in range(random.randrange(1,10)): # make each customer have different number of orders
-        customer_id = customer[0]
-        # note that need trailing comma in the sql statement
-        cur.execute('INSERT INTO orders VALUES(Null,?,?)', (customer_id, datetime.now()))
-        conn.commit()
+    for row in csvreader:
+        # Check if 'publishedDate' is not empty and count is less than 6000.
+        if row['publishedDate'] and count < 6000:
+            # Get or create the author_id.
+            author_id = get_or_create_author_id(row['author'])
+            
+            # Get or create the category_id.
+            category_id = get_or_create_category_id(row['category_name'])
+            
+            # Insert data into the books table.
+            cursor.execute('''
+                    INSERT INTO books (asin, title, author_id, imgUrl, productURL, 
+                                       publishedDate, category_id, stars, price, 
+                                       isBestSeller, isEditorsPick, isGoodReadsChoice, 
+                                       soldBy) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (row['asin'], row['title'], author_id, row['imgUrl'], row['productURL'],
+                      row['publishedDate'], category_id, row['stars'], row['price'],
+                      row['isBestSeller'], row['isEditorsPick'], row['isGoodReadsChoice'],
+                      row['soldBy']))
+            
+            count += 1  # Increment the counter after a successful import.
 
-# attach line_items to orders
-cur.execute('select * from orders')
-orders = cur.fetchall()
-
-cur.execute('select * from carts')
-carts = cur.fetchall()
-
-for order in orders:
-    for cart in carts:
-        quantity = cart[2]
-        product_id = cart[1]
-        cart_id = cart[0]
-        order_id = order[0]
-        cur.execute('INSERT INTO line_items VALUES(NULL,?,?,?,?,?)', (product_id, quantity, cart_id, order_id, datetime.now()))
-        conn.commit()
-    
-
+# Commit the changes and close the database connection.
+conn.commit()
+conn.close()

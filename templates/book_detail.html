@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <img src="{{ book.imgUrl }}" class="img-fluid" alt="{{ book.title }}">
+    </div>
+    <div class="col-md-4">
+        <h2>{{ book.title }}</h2>
+        <p><strong>作者:</strong> {{ book.author }}</p>
+        <p><strong>价格:</strong> {{ book.price }}</p>
+        <p><strong>评分:</strong> {{ book.stars }}</p>
+        <p><strong>评论数:</strong> {{ book.reviews }}</p>
+        <p><strong>出版日期:</strong> {{ book.publishedDate }}</p>
+        <!-- 如果有，则显示其他信息 -->
+        {% if book.isBestSeller %}
+        <p><span class="badge bg-success">畅销书籍</span></p>
+        {% endif %}
+        {% if book.isEditorsPick %}
+        <p><span class="badge bg-info">编辑推荐</span></p>
+        {% endif %}
+        {% if book.isGoodReadsChoice %}
+        <p><span class="badge bg-warning">GoodReads选择</span></p>
+        {% endif %}
+        <a href="{{ book.productURL }}" class="btn btn-primary">购买此书</a>
+    </div>
+</div>
+{% endblock %}

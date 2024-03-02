@@ -85,16 +85,25 @@ def import_data(cursor, csv_file_path):
 
 if __name__ == '__main__':
     # set csv file path and SQLite db path
-    sqlite_db_path = 'CS551P_assessment3/shopping_data.db'
-    csv_file_path = 'CS551P_assessment3/csv/bookdata.csv'
+    sqlite_db_path = 'shopping_data.db'
+    csv_file_path = 'csv/bookdata.csv'
 
-    # connect with SQLite db
-    conn = sqlite3.connect(sqlite_db_path)
-    cursor = conn.cursor()
+    try:
+        # connect with SQLite db
+        conn = sqlite3.connect(sqlite_db_path)
+        cursor = conn.cursor()
 
-    setup_database(cursor)
-    import_data(cursor, csv_file_path)
+        setup_database(cursor)
+        import_data(cursor, csv_file_path)
 
-    # Commit the changes and close the database connection.
-    conn.commit()
-    conn.close()
+        # Commit the changes
+        conn.commit()
+    except sqlite3.DatabaseError as e:
+        print(f"Database error: {e}")
+    except FileNotFoundError as e:
+        print(f"CSV file not found: {e}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        # close the database connection whether or not an error occurred
+        conn.close()

@@ -1,6 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
 {% block content %}
-<h2>Welcome to Our Shopping Site</h2>
-<p>Check out our list of awesome products below!</p>
-<!-- Product list goes here -->
+<div class="row">
+    <!-- 使用 Flask 模板填充书籍列表 -->
+    {% for book in featured_books %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <img src="{{ book.imgUrl }}" class="card-img-top" alt="{{ book.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text">作者: {{ book.author }}</p>
+                <p class="card-text">价格: {{ book.price }}</p>
+                <a href="{{ book.productURL }}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

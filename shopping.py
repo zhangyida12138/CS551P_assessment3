@@ -1,28 +1,47 @@
 from flask import Flask, render_template, g
 
+# Initialize a new Flask application instance.
 app = Flask(__name__)
 
+# Define a constant for the database file path.
 DATABASE = 'shopping_data.db'
 
+
+# Function to get a database connection.
+# This will be used to connect to the SQLite database.
 def get_db_connection():
+    # Check if there's already a database connection in the global object `g`.
+    # If not, establish a new database connection and store it in `g`.
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect(DATABASE)
+        # Configure the connection to return rows that behave like dictionaries.
+        # This allows accessing the columns of a row by name.
         db.row_factory = sqlite3.Row
     return db
 
+
+# Register a function to be called when the application context ends.
+# When the Flask app context is destroyed, this function will close the database connection.
 @app.teardown_appcontext
 def close_connection(exception):
+  # Get the database connection from `g` if it exists.
     db = getattr(g, '_database', None)
     if db is not None:
+      # Close the database connection.
         db.close()
 
+
+# Define the route for the root URL ('/').
 @app.route('/')
 def index():
-    conn = None
+    conn = None  # Initialize the connection variable.
     try:
+        # Get a database connection and create a cursor to execute SQL commands.
         conn = get_db_connection()
         cursor = conn.cursor()
+        # Execute a SQL query to retrieve books marked as bestsellers.
+        # Join the 'books' table with the 'authors' table to get the author's name.
         cursor.execute('''
             SELECT b.asin, b.title, a.name as author, b.imgUrl, b.productURL, b.price
             FROM books b
@@ -30,73 +49,89 @@ def index():
             WHERE b.isBestSeller = 1
             LIMIT 10;
         ''')
+        # Fetch all the results of the query.
         featured_books = cursor.fetchall()
+        # Render the 'index.html' template, passing the featured books as a context variable.
         return render_template('index.html', featured_books=featured_books)
     except sqlite3.DatabaseError as error:
+        # If a database error occurs, print it to the console and return an error response.
         print(f"Database error: {error}")
         return "A database error occurred.", 500
     finally:
+        # Ensure the database connection is closed whether or not an error occurred.
         if conn:
             conn.close()
 
-            
-# @app.route('/customers')
-# def customers():
-#     conn = sqlite3.connect(db_name)
-#     conn.row_factory = sqlite3.Row
-#     cur = conn.cursor()
-#     # get results from customers
-#     cur.execute("select * from customers")
-#     rows = cur.fetchall()
-#     conn.close()
-#     return render_template('customers.html', rows=rows)
+@app.route('/books')
+def book_list():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    # 查询所有书籍信息，同时获取作者名称和分类名称
+    cursor.execute('''
+        SELECT b.asin, b.title, b.imgUrl, b.productURL, b.price, a.name as author
+        FROM books b
+        JOIN authors a ON b.author_id = a.author_id
+    ''')
+    books = cursor.fetchall()
+    conn.close()
+    return render_template('book_list.html', books=books)
 
-# @app.route('/customer_details/<id>')
-# def customer_details(id):
-#     conn = sqlite3.connect(db_name)
-#     conn.row_factory = sqlite3.Row
-#     cur = conn.cursor()
-#     # get results from customers
-#     cur.execute("select * from customers WHERE id=?", (id,))# do not forget the comma which makes the parameter a tuple
-#     customer = cur.fetchall()
-#     # get results from orders for this customer id
-#     cur.execute("select * from orders WHERE customer_id=?", (id,))
-#     orders = cur.fetchall()
+@app.route('/book/<asin>')
+def book_detail(asin):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT b.asin, b.title, a.name as author, b.imgUrl, b.productURL, 
+               b.price, b.stars, b.reviews, b.publishedDate, 
+               b.isBestSeller, b.isEditorsPick, b.isGoodReadsChoice
+        FROM books b
+        JOIN authors a ON b.author_id = a.author_id
+        WHERE b.asin = ?
+    ''', (asin,))
+    book = cursor.fetchone()
+    conn.close()
+    
+    if book:
+        # 将书籍数据转换为字典，方便在模板中通过名称访问
+        book_dict = {
+            'asin': book['asin'],
+            'title': book['title'],
+            'author': book['author'],
+            'imgUrl': book['imgUrl'],
+            'productURL': book['productURL'],
+            'price': book['price'],
+            'stars': book['stars'],
+            'reviews': book['reviews'],
+            'publishedDate': book['publishedDate'],
+            'isBestSeller': book['isBestSeller'],
+            'isEditorsPick': book['isEditorsPick'],
+            'isGoodReadsChoice': book['isGoodReadsChoice']
+        }
+        return render_template('book_detail.html', book=book_dict)
+    else:
+        return "Can not found the book", 404
 
-#     conn.close()
-#     return render_template('customer_details.html', customer=customer, orders=orders)
+@app.route('/search')
+def search():
+    query = request.args.get('query', '')  # 从URL的查询参数中获取搜索关键字
+    conn = get_db_connection()
+    books = []
+    if query:
+        # 执行搜索查询
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT b.asin, b.title, b.imgUrl, b.productURL, b.price, a.name as author,
+                   c.category_name, b.stars, b.publishedDate, b.isBestSeller, 
+                   b.isEditorsPick, b.isGoodReadsChoice
+            FROM books b
+            JOIN authors a ON b.author_id = a.author_id
+            JOIN categories c ON b.category_id = c.category_id
+            WHERE b.title LIKE ? OR a.name LIKE ? OR c.category_name LIKE ?;
+        ''', ('%' + query + '%', '%' + query + '%', '%' + query + '%'))
+        books = cursor.fetchall()
+    conn.close()
+    return render_template('search_results.html', search_results=books, query=query)
 
-# @app.route('/orders')
-# def orders():
-#     conn = sqlite3.connect(db_name)
-#     conn.row_factory = sqlite3.Row
-#     cur = conn.cursor()
-#     # get results from orders
-#     cur.execute("select * from orders")
-#     rows = cur.fetchall()
-#     conn.close()
-#     return render_template('orders.html', rows=rows)
-
-# @app.route('/order_details/<id>')
-# def order_details(id):
-#     conn = sqlite3.connect(db_name)
-#     conn.row_factory = sqlite3.Row
-#     cur = conn.cursor()
-#     # get results from orders
-#     cur.execute("select * from orders WHERE id=?", (id,))
-#     order = cur.fetchall()
-
-#     customer_id=order[0]["customer_id"]
-#     # get results from customers for this order
-#     cur.execute("select * from customers WHERE id=?", (customer_id,))
-#     customer = cur.fetchall()
-
-#     # get results from line_items
-#     cur.execute("select * from line_items WHERE order_id=?", (id,))
-#     items = cur.fetchall()
-
-#     conn.close()
-#     return render_template('order_details.html', order=order, customer=customer, items=items)
 
 if __name__ == '__main__':
     app.run(debug=True)   

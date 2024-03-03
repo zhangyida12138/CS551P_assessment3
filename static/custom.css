@@ -19,16 +19,15 @@ body {
   color: #0275d8;
 }
 
-.nav-link {
-  color: #555 ;
-}
-
 .navbar {
   margin-bottom: 25px;
 }
 
 .nav-item {
+  font-weight: bold;
   margin-right: 10px;
+  font-family: 'Arial', sans-serif;
+  color: #0275d8;
 }
 
 .nav-link {
@@ -109,7 +108,7 @@ footer {
   flex: 0 0 auto;
   padding: 1rem;
   width: 25%; 
-  max-width: 25%; /* 防止卡片宽度超过三列布局的宽度 */
+  max-width: 25%; /* Prevent card width from exceeding the width of a three-column layout */
 }
 
 /* Fix the height of the row to the tallest card */
@@ -119,7 +118,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* 在小屏幕上调整卡片容器的宽度，实现两列布局 */
+  /* Adjust the width of the card container for a two-column layout on small screens */
   .col-md-3 {
     width: 50%;
     max-width: 50%;
@@ -127,7 +126,7 @@ footer {
 }
 
 @media (max-width: 576px) {
-  /* 在更小屏幕上调整卡片容器的宽度，实现单列布局 */
+  /* Adjust the width of the card container for a single-column layout on smaller screens */
   .col-md-3 {
     width: 100%;
     max-width: 100%;

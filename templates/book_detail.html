@@ -11,7 +11,7 @@
         <p><strong>price:</strong> {{ book.price }}</p>
         <p><strong>star:</strong> {{ book.stars }}</p>
         <p><strong>publishedDate:</strong> {{ book.publishedDate }}</p>
-        <!-- 如果有，则显示其他信息 -->
+        <!-- If so, additional information is displayed -->
         {% if book.isBestSeller %}
         <p><span class="badge bg-success">best selling books</span></p>
         {% endif %}

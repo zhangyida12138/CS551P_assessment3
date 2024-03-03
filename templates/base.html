@@ -21,13 +21,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('book_list') }}">book list</a>
         </li>
-        <!-- 你可以在这里添加更多的nav-item来链接到其他页面 -->
       </ul>
     </div>
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="search kindle" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">search</button>
-    </form>
+    <form class="d-flex" action="{{ url_for('search') }}" method="get">
+    <input class="form-control me-2" type="search" name="query" placeholder="search kindle" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">search</button>
+</form>
   </div>
 </nav>
 

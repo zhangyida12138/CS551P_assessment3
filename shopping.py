@@ -57,10 +57,10 @@ def index():
         # Fetch all the results of the query.
         featured_books = cursor.fetchall()
         app.logger.info(f"Number of books fetched: {len(featured_books)}")
-        for book in featured_books:
-            print(book['title'], book['author'], book['price'])  # Example of printing title, author, and price.
-            # Use app.logger.info if you prefer logging instead of printing.
-            app.logger.info(f"Book: {book['title']}, Author: {book['author']}, Price: {book['price']}")
+        # for book in featured_books:
+        #     print(book['title'], book['author'], book['price'])  # Example of printing title, author, and price.
+        #     # Use app.logger.info if you prefer logging instead of printing.
+        #     app.logger.info(f"Book: {book['title']}, Author: {book['author']}, Price: {book['price']}")
 
         app.logger.info('Index page is accessed.')
         # Render the 'index.html' template, passing the featured books as a context variable.
@@ -78,7 +78,7 @@ def index():
 def book_list():
     conn = get_db_connection()
     cursor = conn.cursor()
-    # 查询所有书籍信息，同时获取作者名称和分类名称
+    # Query all book information and get the author name and category name at the same time
     cursor.execute('''
         SELECT b.asin, b.title, b.imgUrl, b.productURL, b.price, a.name as author
         FROM books b
@@ -104,7 +104,7 @@ def book_detail(asin):
     conn.close()
     
     if book:
-        # 将书籍数据转换为字典，方便在模板中通过名称访问
+        # Convert book data into a dictionary for easy access by name in the template
         book_dict = {
             'asin': book['asin'],
             'title': book['title'],
@@ -124,11 +124,12 @@ def book_detail(asin):
 
 @app.route('/search')
 def search():
-    query = request.args.get('query', '')  # 从URL的查询参数中获取搜索关键字
+    query = request.args.get('query', '')  # Get search keywords from URL query parameters
     conn = get_db_connection()
     books = []
+    app.logger.info('db is connected.')
     if query:
-        # 执行搜索查询
+        # Execute search query
         cursor = conn.cursor()
         cursor.execute('''
             SELECT b.asin, b.title, b.imgUrl, b.productURL, b.price, a.name as author,
@@ -141,6 +142,7 @@ def search():
             ORDER BY b.title ASC;
         ''', ('%' + query + '%', '%' + query + '%', '%' + query + '%'))
         books = cursor.fetchall()
+        app.logger.info('search.')
     conn.close()
     return render_template('search_results.html', search_results=books, query=query)
 

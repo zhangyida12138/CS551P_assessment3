@@ -15,7 +15,7 @@
                 <h5 class="card-title">{{ book.title }}</h5>
                 <p class="card-text">author: {{ book.author }}</p>
                 <p class="card-text">price: {{ book.price }}</p>
-                <a href="{{ book.productURL }}" class="btn btn-primary">details</a>
+                <a href="{{ url_for('book_detail', asin=book.asin) }}" class="btn btn-primary">view detail</a>
             </div>
         </div>
     </div>

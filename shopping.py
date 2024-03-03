@@ -94,7 +94,7 @@ def book_detail(asin):
     cursor = conn.cursor()
     cursor.execute('''
         SELECT b.asin, b.title, a.name as author, b.imgUrl, b.productURL, 
-               b.price, b.stars, b.reviews, b.publishedDate, 
+               b.price, b.stars, b.publishedDate, 
                b.isBestSeller, b.isEditorsPick, b.isGoodReadsChoice
         FROM books b
         JOIN authors a ON b.author_id = a.author_id
@@ -113,7 +113,6 @@ def book_detail(asin):
             'productURL': book['productURL'],
             'price': book['price'],
             'stars': book['stars'],
-            'reviews': book['reviews'],
             'publishedDate': book['publishedDate'],
             'isBestSeller': book['isBestSeller'],
             'isEditorsPick': book['isEditorsPick'],
@@ -138,7 +137,8 @@ def search():
             FROM books b
             JOIN authors a ON b.author_id = a.author_id
             JOIN categories c ON b.category_id = c.category_id
-            WHERE b.title LIKE ? OR a.name LIKE ? OR c.category_name LIKE ?;
+            WHERE b.title LIKE ? OR a.name LIKE ? OR c.category_name LIKE ?
+            ORDER BY b.title ASC;
         ''', ('%' + query + '%', '%' + query + '%', '%' + query + '%'))
         books = cursor.fetchall()
     conn.close()

@@ -1,0 +1,90 @@
+/* custom.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin-top: 20px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #0275d8 !important;
+}
+
+.nav-link {
+  color: #555 !important;
+}
+
+.navbar {
+  margin-bottom: 25px;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  padding: 10px 0;
+  background-color: #fff;
+  margin-top: 30px;
+  border-top: 1px solid #e7e7e7;
+}
+
+/* Card Styles */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  height: 100%; /* Make cards equal height */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  width: 100%;
+  object-fit: cover; /* This will ensure images cover the area fully without stretching */
+  height: 200px; /* Set a fixed height to make images look uniform */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This will push the footer to the bottom */
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.card-text {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.btn-primary {
+  background-color: #0275d8;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #025aa5;
+  border: none;
+}
+
+/* Ensure that all cards have the same width */
+.col-md-4 {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 1rem;
+}
+
+/* Fix the height of the row to the tallest card */
+.row-equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}

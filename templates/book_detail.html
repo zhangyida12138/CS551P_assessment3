@@ -7,22 +7,22 @@
     </div>
     <div class="col-md-4">
         <h2>{{ book.title }}</h2>
-        <p><strong>作者:</strong> {{ book.author }}</p>
-        <p><strong>价格:</strong> {{ book.price }}</p>
-        <p><strong>评分:</strong> {{ book.stars }}</p>
-        <p><strong>评论数:</strong> {{ book.reviews }}</p>
-        <p><strong>出版日期:</strong> {{ book.publishedDate }}</p>
+        <p><strong>author:</strong> {{ book.author }}</p>
+        <p><strong>price:</strong> {{ book.price }}</p>
+        <p><strong>star:</strong> {{ book.stars }}</p>
+        <p><strong>reviews:</strong> {{ book.reviews }}</p>
+        <p><strong>publishedDate:</strong> {{ book.publishedDate }}</p>
         <!-- 如果有，则显示其他信息 -->
         {% if book.isBestSeller %}
-        <p><span class="badge bg-success">畅销书籍</span></p>
+        <p><span class="badge bg-success">best selling books</span></p>
         {% endif %}
         {% if book.isEditorsPick %}
-        <p><span class="badge bg-info">编辑推荐</span></p>
+        <p><span class="badge bg-info">editors pick</span></p>
         {% endif %}
         {% if book.isGoodReadsChoice %}
-        <p><span class="badge bg-warning">GoodReads选择</span></p>
+        <p><span class="badge bg-warning">good reads choice</span></p>
         {% endif %}
-        <a href="{{ book.productURL }}" class="btn btn-primary">购买此书</a>
+        <a href="{{ book.productURL }}" class="btn btn-primary">buy this book</a>
     </div>
 </div>
 {% endblock %}

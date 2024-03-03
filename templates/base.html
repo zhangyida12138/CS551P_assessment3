@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电子书商城</title>
+    <title>kindle shopping </title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
@@ -12,18 +12,18 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">电子书商城</a>
+    <a class="navbar-brand" href="#">kindle shopping </a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">首页</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">index</a>
         </li>
         <!-- 你可以在这里添加更多的nav-item来链接到其他页面 -->
       </ul>
     </div>
     <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="搜索电子书籍" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">搜索</button>
+        <input class="form-control me-2" type="search" placeholder="search kindle" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">search</button>
     </form>
   </div>
 </nav>
@@ -36,7 +36,7 @@
 
 <footer class="bg-light text-center text-lg-start mt-4">
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2024 电子书商城
+    © 2024 kindle shopping
   </div>
 </footer>
 

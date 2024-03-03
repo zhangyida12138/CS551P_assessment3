@@ -50,8 +50,8 @@ def index():
             SELECT b.asin, b.title, a.name as author, b.imgUrl, b.productURL, b.price
             FROM books b
             JOIN authors a ON b.author_id = a.author_id
-            WHERE b.isBestSeller = 1
-            LIMIT 10;
+            ORDER BY RANDOM()
+            LIMIT 40;
         ''')
         app.logger.info('Index page is accessed.')
         # Fetch all the results of the query.

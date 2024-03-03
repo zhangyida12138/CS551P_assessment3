@@ -4,7 +4,7 @@
 <div class="row">
     <!-- use flask to filled the block -->
     {% for book in featured_books %}
-    <div class="col-md-4 mb-3">
+    <div class="col-md-4 mb-3 row row-equal-height">
         <div class="card">
             <img src="{{ book.imgUrl }}" class="card-img-top" alt="{{ book.title }}">
             <div class="card-body">

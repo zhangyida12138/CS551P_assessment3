@@ -1,9 +1,11 @@
-from flask import Flask, render_template, g,request
+from flask import Flask, render_template, g,request,redirect, url_for
 import sqlite3 
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # Initialize a new Flask application instance.
 app = Flask(__name__)
-
+app.secret_key = 'secret_key'
 # Define a constant for the database file path.
 DATABASE = 'shopping_data.db'
 
@@ -11,14 +13,8 @@ DATABASE = 'shopping_data.db'
 # Function to get a database connection.
 # This will be used to connect to the SQLite database.
 def get_db_connection():
-    # Check if there's already a database connection in the global object `g`.
-    # If not, establish a new database connection and store it in `g`.
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-        # Configure the connection to return rows that behave like dictionaries.
-        # This allows accessing the columns of a row by name.
-        db.row_factory = sqlite3.Row
+    db = sqlite3.connect(DATABASE)
+    db.row_factory = sqlite3.Row
     return db
 
 
@@ -146,6 +142,92 @@ def search():
     conn.close()
     return render_template('search_results.html', search_results=books, query=query)
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE id = ?", (int(user_id),))
+        user_record = cursor.fetchone()
+        if user_record:
+            user = UserMixin()
+            user.id = user_record['id']  # Flask-Login 要求用户对象有一个 id 属性
+            return user
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+    return None
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # 加密密码
+        password_hash = generate_password_hash(password)
+        
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        try:
+            cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password_hash))
+            conn.commit()
+        except sqlite3.IntegrityError:  # 捕获用户名重复的异常
+            return "Username already taken", 400
+        return redirect(url_for('login'))
+    return render_template('register.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+        user_record = cursor.fetchone()
+        
+        if user_record and check_password_hash(user_record['password'], password):
+            user = UserMixin()
+            user.id = user_record['id']
+            login_user(user)
+            return redirect(url_for('index'))
+        else:
+            return "Invalid username or password", 401
+    return render_template('login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+@app.route('/secret')
+@login_required
+def secret():
+    return "Only authenticated users can see this."
+
+# errorhandler
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    app.logger.error(f"server error: {e}, path: {request.url}")
+    return render_template('500.html'), 500
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    app.logger.error(f"unhandled exception: {e}, path: {request.url}")
+    return render_template('error.html', error=e), 500
 
 if __name__ == '__main__':
     app.run(debug=True)   

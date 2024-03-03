@@ -1,11 +1,16 @@
 import csv
 import sqlite3
+import logging
+
+logging.basicConfig(filename='database.log', level=logging.INFO, 
+                    format='%(asctime)s:%(levelname)s:%(message)s')
 
 def setup_database(cursor):
     # Drop existing tables
     cursor.execute('DROP TABLE IF EXISTS authors')
     cursor.execute('DROP TABLE IF EXISTS categories')
     cursor.execute('DROP TABLE IF EXISTS books')
+    cursor.execute('DROP TABLE IF EXISTS users')
 
     # Create tables
     cursor.execute('''
@@ -38,6 +43,14 @@ def setup_database(cursor):
           FOREIGN KEY (author_id) REFERENCES authors (author_id),
           FOREIGN KEY (category_id) REFERENCES categories (category_id)
         )
+    ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL
+    )
     ''')
 
 # Function to get or create author_id and return it. there is no author_id in csv
@@ -102,10 +115,13 @@ if __name__ == '__main__':
         conn.commit()
     except sqlite3.DatabaseError as e:
         print(f"Database error: {e}")
+        logging.error(f"Database error: {e}")
     except FileNotFoundError as e:
         print(f"CSV file not found: {e}")
+        logging.error(f"FileNotFoundError: {e}")
     except Exception as e:
         print(f"An error occurred: {e}")
+        logging.error(f"An error occurred: {e}")
     finally:
         # close the database connection whether or not an error occurred
         conn.close()

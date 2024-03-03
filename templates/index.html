@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
-
+<!-- extend the base page -->
 {% block content %}
 <div class="row">
-    <!-- 使用 Flask 模板填充书籍列表 -->
+    <!-- use flask to filled the block -->
     {% for book in featured_books %}
     <div class="col-md-4 mb-3">
         <div class="card">
             <img src="{{ book.imgUrl }}" class="card-img-top" alt="{{ book.title }}">
             <div class="card-body">
                 <h5 class="card-title">{{ book.title }}</h5>
-                <p class="card-text">作者: {{ book.author }}</p>
-                <p class="card-text">价格: {{ book.price }}</p>
-                <a href="{{ book.productURL }}" class="btn btn-primary">查看详情</a>
+                <p class="card-text">author: {{ book.author }}</p>
+                <p class="card-text">price: {{ book.price }}</p>
+                <a href="{{ book.productURL }}" class="btn btn-primary">details</a>
             </div>
         </div>
     </div>

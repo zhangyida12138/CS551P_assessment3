@@ -40,7 +40,7 @@ def setup_database(cursor):
         )
     ''')
 
-# Function to get or create author_id and return it.
+# Function to get or create author_id and return it. there is no author_id in csv
 def get_or_create_author_id(cursor, author_name):
     cursor.execute('SELECT author_id FROM authors WHERE name = ?', (author_name,))
     result = cursor.fetchone()
@@ -82,6 +82,8 @@ def import_data(cursor, csv_file_path):
                           row['isBestSeller'], row['isEditorsPick'], row['isGoodReadsChoice'],
                           row['soldBy']))
                 count += 1
+                # print(count)
+                # test
 
 if __name__ == '__main__':
     # set csv file path and SQLite db path

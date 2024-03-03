@@ -1,4 +1,5 @@
-from flask import Flask, render_template, g
+from flask import Flask, render_template, g,request
+import sqlite3 
 
 # Initialize a new Flask application instance.
 app = Flask(__name__)
@@ -37,9 +38,12 @@ def close_connection(exception):
 def index():
     conn = None  # Initialize the connection variable.
     try:
+        
         # Get a database connection and create a cursor to execute SQL commands.
         conn = get_db_connection()
+        app.logger.info('Index page is accessed.')
         cursor = conn.cursor()
+        app.logger.info('Index page is accessed.')
         # Execute a SQL query to retrieve books marked as bestsellers.
         # Join the 'books' table with the 'authors' table to get the author's name.
         cursor.execute('''
@@ -49,8 +53,16 @@ def index():
             WHERE b.isBestSeller = 1
             LIMIT 10;
         ''')
+        app.logger.info('Index page is accessed.')
         # Fetch all the results of the query.
         featured_books = cursor.fetchall()
+        app.logger.info(f"Number of books fetched: {len(featured_books)}")
+        for book in featured_books:
+            print(book['title'], book['author'], book['price'])  # Example of printing title, author, and price.
+            # Use app.logger.info if you prefer logging instead of printing.
+            app.logger.info(f"Book: {book['title']}, Author: {book['author']}, Price: {book['price']}")
+
+        app.logger.info('Index page is accessed.')
         # Render the 'index.html' template, passing the featured books as a context variable.
         return render_template('index.html', featured_books=featured_books)
     except sqlite3.DatabaseError as error:

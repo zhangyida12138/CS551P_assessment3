@@ -5,17 +5,42 @@ body {
   margin-top: 20px;
 }
 
-.navbar-brand {
+.title{
   font-weight: bold;
-  color: #0275d8 !important;
+  color: #0275d8;
+  padding: 10px;
+  font-size: 1.2em;
+
+}
+
+.navbar-brand {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #0275d8;
 }
 
 .nav-link {
-  color: #555 !important;
+  color: #555 ;
 }
 
 .navbar {
   margin-bottom: 25px;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #555;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #e7e7e7;
 }
 
 .container {
@@ -37,6 +62,7 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
   height: 100%; /* Make cards equal height */
+  width: 100%;
 }
 
 .card:hover {
@@ -49,6 +75,7 @@ footer {
   object-fit: cover; /* This will ensure images cover the area fully without stretching */
   height: 200px; /* Set a fixed height to make images look uniform */
 }
+
 
 .card-body {
   display: flex;
@@ -77,10 +104,34 @@ footer {
 }
 
 /* Ensure that all cards have the same width */
-.col-md-4 {
+.col-md-3 {
   display: flex;
   flex: 0 0 auto;
   padding: 1rem;
+  width: 25%; 
+  max-width: 25%; /* 防止卡片宽度超过三列布局的宽度 */
+}
+
+/* Fix the height of the row to the tallest card */
+.row-equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  /* 在小屏幕上调整卡片容器的宽度，实现两列布局 */
+  .col-md-3 {
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* 在更小屏幕上调整卡片容器的宽度，实现单列布局 */
+  .col-md-3 {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Fix the height of the row to the tallest card */

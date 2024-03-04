@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g,request,redirect, url_for
+from flask import Flask, render_template, g,request,redirect, url_for,flash
 import sqlite3 
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -170,7 +170,6 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        # 加密密码
         password_hash = generate_password_hash(password)
         
         conn = get_db_connection()
@@ -178,8 +177,8 @@ def register():
         try:
             cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password_hash))
             conn.commit()
-        except sqlite3.IntegrityError:  # 捕获用户名重复的异常
-            return "Username already taken", 400
+        except sqlite3.IntegrityError:  #Catch exceptions with duplicate usernames
+            flash("Username has been taken.")
         return redirect(url_for('login'))
     return render_template('register.html')
 
@@ -200,7 +199,8 @@ def login():
             login_user(user)
             return redirect(url_for('index'))
         else:
-            return "Invalid username or password", 401
+            flash("invalid username or password.")
+            return redirect(url_for('login'))
     return render_template('login.html')
 
 @app.route('/logout')
@@ -214,10 +214,21 @@ def logout():
 def secret():
     return "Only authenticated users can see this."
 
+if app.config['ENV'] == 'development':
+    @app.route('/test-500')
+    def test_500():
+        return render_template('500.html'), 500
+
 # errorhandler
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+@app.errorhandler(401)
+def handle_401_error(e):
+    # 确保指向正确的模板文件名
+    return render_template('error.html'), 500
+
 
 @app.errorhandler(500)
 def internal_server_error(e):
@@ -228,6 +239,7 @@ def internal_server_error(e):
 def handle_exception(e):
     app.logger.error(f"unhandled exception: {e}, path: {request.url}")
     return render_template('error.html', error=e), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)   

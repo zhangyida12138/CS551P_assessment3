@@ -1,0 +1,414 @@
+2024-03-03 22:34:38,881:INFO:Index page is accessed.
+2024-03-03 22:34:38,881:INFO:Index page is accessed.
+2024-03-03 22:34:39,187:INFO:Index page is accessed.
+2024-03-03 22:34:39,187:INFO:Number of books fetched: 40
+2024-03-03 22:34:39,187:INFO:Index page is accessed.
+2024-03-03 22:34:39,196:INFO:db is connected.
+2024-03-03 22:34:39,200:INFO:search.
+2024-03-03 22:34:40,720:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:34:40,725:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:34:40,726:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:43:46,407:INFO:Index page is accessed.
+2024-03-03 22:43:46,407:INFO:Index page is accessed.
+2024-03-03 22:43:46,413:INFO:Index page is accessed.
+2024-03-03 22:43:46,413:INFO:Number of books fetched: 40
+2024-03-03 22:43:46,413:INFO:Index page is accessed.
+2024-03-03 22:43:46,420:INFO:db is connected.
+2024-03-03 22:43:46,425:INFO:search.
+2024-03-03 22:43:47,961:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:43:47,966:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:43:47,968:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:43:48,121:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 22:44:55,154:INFO:Index page is accessed.
+2024-03-03 22:44:55,154:INFO:Index page is accessed.
+2024-03-03 22:44:55,160:INFO:Index page is accessed.
+2024-03-03 22:44:55,160:INFO:Number of books fetched: 40
+2024-03-03 22:44:55,160:INFO:Index page is accessed.
+2024-03-03 22:44:55,167:INFO:db is connected.
+2024-03-03 22:44:55,171:INFO:search.
+2024-03-03 22:44:56,714:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:44:56,719:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:44:56,721:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:44:56,875:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 22:48:51,252:INFO:Index page is accessed.
+2024-03-03 22:48:51,253:INFO:Index page is accessed.
+2024-03-03 22:48:51,258:INFO:Index page is accessed.
+2024-03-03 22:48:51,258:INFO:Number of books fetched: 40
+2024-03-03 22:48:51,259:INFO:Index page is accessed.
+2024-03-03 22:48:51,265:INFO:db is connected.
+2024-03-03 22:48:51,269:INFO:search.
+2024-03-03 22:48:52,842:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:48:52,847:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:48:52,848:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:48:52,998:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 22:49:02,750:INFO:Index page is accessed.
+2024-03-03 22:49:02,750:INFO:Index page is accessed.
+2024-03-03 22:49:02,756:INFO:Index page is accessed.
+2024-03-03 22:49:02,756:INFO:Number of books fetched: 40
+2024-03-03 22:49:02,756:INFO:Index page is accessed.
+2024-03-03 22:49:02,763:INFO:db is connected.
+2024-03-03 22:49:02,767:INFO:search.
+2024-03-03 22:49:04,335:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:49:04,339:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:49:04,341:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:49:04,490:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 22:50:53,466:INFO:Index page is accessed.
+2024-03-03 22:50:53,466:INFO:Index page is accessed.
+2024-03-03 22:50:53,472:INFO:Index page is accessed.
+2024-03-03 22:50:53,472:INFO:Number of books fetched: 40
+2024-03-03 22:50:53,472:INFO:Index page is accessed.
+2024-03-03 22:50:53,479:INFO:db is connected.
+2024-03-03 22:50:53,484:INFO:search.
+2024-03-03 22:50:55,051:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:50:55,056:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:50:55,058:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:50:55,209:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 22:59:22,394:INFO:Index page is accessed.
+2024-03-03 22:59:22,394:INFO:Index page is accessed.
+2024-03-03 22:59:22,400:INFO:Index page is accessed.
+2024-03-03 22:59:22,400:INFO:Number of books fetched: 40
+2024-03-03 22:59:22,400:INFO:Index page is accessed.
+2024-03-03 22:59:22,407:INFO:db is connected.
+2024-03-03 22:59:22,411:INFO:search.
+2024-03-03 22:59:24,016:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:59:24,021:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/login
+2024-03-03 22:59:24,023:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 22:59:24,174:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 23:12:12,573:INFO:Index page is accessed.
+2024-03-03 23:12:12,574:INFO:Index page is accessed.
+2024-03-03 23:12:12,580:INFO:Index page is accessed.
+2024-03-03 23:12:12,580:INFO:Number of books fetched: 40
+2024-03-03 23:12:12,580:INFO:Index page is accessed.
+2024-03-03 23:12:14,502:INFO:Index page is accessed.
+2024-03-03 23:12:14,502:INFO:Index page is accessed.
+2024-03-03 23:12:14,507:INFO:Index page is accessed.
+2024-03-03 23:12:14,507:INFO:Number of books fetched: 40
+2024-03-03 23:12:14,507:INFO:Index page is accessed.
+2024-03-03 23:12:14,511:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:13:45,433:INFO:Index page is accessed.
+2024-03-03 23:13:45,433:INFO:Index page is accessed.
+2024-03-03 23:13:45,439:INFO:Index page is accessed.
+2024-03-03 23:13:45,440:INFO:Number of books fetched: 40
+2024-03-03 23:13:45,440:INFO:Index page is accessed.
+2024-03-03 23:13:47,369:INFO:Index page is accessed.
+2024-03-03 23:13:47,369:INFO:Index page is accessed.
+2024-03-03 23:13:47,374:INFO:Index page is accessed.
+2024-03-03 23:13:47,374:INFO:Number of books fetched: 40
+2024-03-03 23:13:47,374:INFO:Index page is accessed.
+2024-03-03 23:13:47,378:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:13:47,534:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 23:21:07,106:INFO:Index page is accessed.
+2024-03-03 23:21:07,106:INFO:Index page is accessed.
+2024-03-03 23:21:07,112:INFO:Index page is accessed.
+2024-03-03 23:21:07,113:INFO:Number of books fetched: 40
+2024-03-03 23:21:07,113:INFO:Index page is accessed.
+2024-03-03 23:21:09,048:INFO:Index page is accessed.
+2024-03-03 23:21:09,049:INFO:Index page is accessed.
+2024-03-03 23:21:09,054:INFO:Index page is accessed.
+2024-03-03 23:21:09,054:INFO:Number of books fetched: 40
+2024-03-03 23:21:09,054:INFO:Index page is accessed.
+2024-03-03 23:21:09,058:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:21:09,217:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 23:23:23,484:INFO:Index page is accessed.
+2024-03-03 23:23:23,485:INFO:Index page is accessed.
+2024-03-03 23:23:23,491:INFO:Index page is accessed.
+2024-03-03 23:23:23,491:INFO:Number of books fetched: 40
+2024-03-03 23:23:23,491:INFO:Index page is accessed.
+2024-03-03 23:23:25,403:INFO:Index page is accessed.
+2024-03-03 23:23:25,404:INFO:Index page is accessed.
+2024-03-03 23:23:25,409:INFO:Index page is accessed.
+2024-03-03 23:23:25,409:INFO:Number of books fetched: 40
+2024-03-03 23:23:25,409:INFO:Index page is accessed.
+2024-03-03 23:23:25,413:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:23:25,569:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 23:31:16,424:INFO:Index page is accessed.
+2024-03-03 23:31:16,425:INFO:Index page is accessed.
+2024-03-03 23:31:16,431:INFO:Index page is accessed.
+2024-03-03 23:31:16,431:INFO:Number of books fetched: 40
+2024-03-03 23:31:16,431:INFO:Index page is accessed.
+2024-03-03 23:31:18,349:INFO:Index page is accessed.
+2024-03-03 23:31:18,349:INFO:Index page is accessed.
+2024-03-03 23:31:18,354:INFO:Index page is accessed.
+2024-03-03 23:31:18,355:INFO:Number of books fetched: 40
+2024-03-03 23:31:18,355:INFO:Index page is accessed.
+2024-03-03 23:31:18,358:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:31:18,514:ERROR:unhandled exception: name 'flash' is not defined, path: http://localhost/register
+2024-03-03 23:33:56,444:INFO:Index page is accessed.
+2024-03-03 23:33:56,444:INFO:Index page is accessed.
+2024-03-03 23:33:56,450:INFO:Index page is accessed.
+2024-03-03 23:33:56,450:INFO:Number of books fetched: 40
+2024-03-03 23:33:56,450:INFO:Index page is accessed.
+2024-03-03 23:33:58,332:INFO:Index page is accessed.
+2024-03-03 23:33:58,332:INFO:Index page is accessed.
+2024-03-03 23:33:58,337:INFO:Index page is accessed.
+2024-03-03 23:33:58,338:INFO:Number of books fetched: 40
+2024-03-03 23:33:58,338:INFO:Index page is accessed.
+2024-03-03 23:33:58,341:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:37:17,037:ERROR:unhandled exception: This is a test exception for a 500 error., path: http://localhost/test-500
+2024-03-03 23:37:17,041:INFO:Index page is accessed.
+2024-03-03 23:37:17,041:INFO:Index page is accessed.
+2024-03-03 23:37:17,047:INFO:Index page is accessed.
+2024-03-03 23:37:17,047:INFO:Number of books fetched: 40
+2024-03-03 23:37:17,047:INFO:Index page is accessed.
+2024-03-03 23:37:18,939:INFO:Index page is accessed.
+2024-03-03 23:37:18,939:INFO:Index page is accessed.
+2024-03-03 23:37:18,944:INFO:Index page is accessed.
+2024-03-03 23:37:18,944:INFO:Number of books fetched: 40
+2024-03-03 23:37:18,944:INFO:Index page is accessed.
+2024-03-03 23:37:18,948:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:42:14,335:ERROR:unhandled exception: This is a test exception for a 500 error., path: http://localhost/test-500
+2024-03-03 23:42:14,339:INFO:Index page is accessed.
+2024-03-03 23:42:14,339:INFO:Index page is accessed.
+2024-03-03 23:42:14,345:INFO:Index page is accessed.
+2024-03-03 23:42:14,345:INFO:Number of books fetched: 40
+2024-03-03 23:42:14,345:INFO:Index page is accessed.
+2024-03-03 23:42:16,200:INFO:Index page is accessed.
+2024-03-03 23:42:16,200:INFO:Index page is accessed.
+2024-03-03 23:42:16,205:INFO:Index page is accessed.
+2024-03-03 23:42:16,205:INFO:Number of books fetched: 40
+2024-03-03 23:42:16,205:INFO:Index page is accessed.
+2024-03-03 23:42:16,209:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-03 23:49:43,720:ERROR:unhandled exception: This is a test exception for a 500 error., path: http://localhost/test-500
+2024-03-03 23:49:43,725:INFO:Index page is accessed.
+2024-03-03 23:49:43,725:INFO:Index page is accessed.
+2024-03-03 23:49:43,731:INFO:Index page is accessed.
+2024-03-03 23:49:43,731:INFO:Number of books fetched: 40
+2024-03-03 23:49:43,731:INFO:Index page is accessed.
+2024-03-03 23:49:45,588:INFO:Index page is accessed.
+2024-03-03 23:49:45,588:INFO:Index page is accessed.
+2024-03-03 23:49:45,593:INFO:Index page is accessed.
+2024-03-03 23:49:45,593:INFO:Number of books fetched: 40
+2024-03-03 23:49:45,593:INFO:Index page is accessed.
+2024-03-03 23:59:26,452:ERROR:unhandled exception: This is a test exception for a 500 error., path: http://localhost/test-500
+2024-03-03 23:59:26,456:INFO:Index page is accessed.
+2024-03-03 23:59:26,456:INFO:Index page is accessed.
+2024-03-03 23:59:26,462:INFO:Index page is accessed.
+2024-03-03 23:59:26,462:INFO:Number of books fetched: 40
+2024-03-03 23:59:26,462:INFO:Index page is accessed.
+2024-03-03 23:59:28,174:INFO:Index page is accessed.
+2024-03-03 23:59:28,174:INFO:Index page is accessed.
+2024-03-03 23:59:28,180:INFO:Index page is accessed.
+2024-03-03 23:59:28,180:INFO:Number of books fetched: 40
+2024-03-03 23:59:28,180:INFO:Index page is accessed.
+2024-03-03 23:59:28,336:INFO:Index page is accessed.
+2024-03-03 23:59:28,336:INFO:Index page is accessed.
+2024-03-03 23:59:28,341:INFO:Index page is accessed.
+2024-03-03 23:59:28,341:INFO:Number of books fetched: 40
+2024-03-03 23:59:28,341:INFO:Index page is accessed.
+2024-03-03 23:59:55,742:ERROR:unhandled exception: This is a test exception for a 500 error., path: http://localhost/test-500
+2024-03-03 23:59:55,747:INFO:Index page is accessed.
+2024-03-03 23:59:55,747:INFO:Index page is accessed.
+2024-03-03 23:59:55,752:INFO:Index page is accessed.
+2024-03-03 23:59:55,752:INFO:Number of books fetched: 40
+2024-03-03 23:59:55,752:INFO:Index page is accessed.
+2024-03-03 23:59:57,472:INFO:Index page is accessed.
+2024-03-03 23:59:57,472:INFO:Index page is accessed.
+2024-03-03 23:59:57,477:INFO:Index page is accessed.
+2024-03-03 23:59:57,478:INFO:Number of books fetched: 40
+2024-03-03 23:59:57,478:INFO:Index page is accessed.
+2024-03-03 23:59:57,632:INFO:Index page is accessed.
+2024-03-03 23:59:57,632:INFO:Index page is accessed.
+2024-03-03 23:59:57,637:INFO:Index page is accessed.
+2024-03-03 23:59:57,637:INFO:Number of books fetched: 40
+2024-03-03 23:59:57,637:INFO:Index page is accessed.
+2024-03-04 00:01:56,168:ERROR:unhandled exception: This is a test exception for a 500 error., path: http://localhost/test-500
+2024-03-04 00:01:56,172:INFO:Index page is accessed.
+2024-03-04 00:01:56,172:INFO:Index page is accessed.
+2024-03-04 00:01:56,178:INFO:Index page is accessed.
+2024-03-04 00:01:56,178:INFO:Number of books fetched: 40
+2024-03-04 00:01:56,178:INFO:Index page is accessed.
+2024-03-04 00:01:57,995:INFO:Index page is accessed.
+2024-03-04 00:01:57,995:INFO:Index page is accessed.
+2024-03-04 00:01:58,001:INFO:Index page is accessed.
+2024-03-04 00:01:58,001:INFO:Number of books fetched: 40
+2024-03-04 00:01:58,001:INFO:Index page is accessed.
+2024-03-04 00:01:58,159:INFO:Index page is accessed.
+2024-03-04 00:01:58,159:INFO:Index page is accessed.
+2024-03-04 00:01:58,165:INFO:Index page is accessed.
+2024-03-04 00:01:58,165:INFO:Number of books fetched: 40
+2024-03-04 00:01:58,165:INFO:Index page is accessed.
+2024-03-04 00:08:26,247:INFO:Index page is accessed.
+2024-03-04 00:08:26,248:INFO:Index page is accessed.
+2024-03-04 00:08:26,253:INFO:Index page is accessed.
+2024-03-04 00:08:26,254:INFO:Number of books fetched: 40
+2024-03-04 00:08:26,254:INFO:Index page is accessed.
+2024-03-04 00:08:28,077:INFO:Index page is accessed.
+2024-03-04 00:08:28,077:INFO:Index page is accessed.
+2024-03-04 00:08:28,082:INFO:Index page is accessed.
+2024-03-04 00:08:28,083:INFO:Number of books fetched: 40
+2024-03-04 00:08:28,083:INFO:Index page is accessed.
+2024-03-04 00:08:28,242:INFO:Index page is accessed.
+2024-03-04 00:08:28,242:INFO:Index page is accessed.
+2024-03-04 00:08:28,248:INFO:Index page is accessed.
+2024-03-04 00:08:28,248:INFO:Number of books fetched: 40
+2024-03-04 00:08:28,248:INFO:Index page is accessed.
+2024-03-04 00:12:58,696:INFO:Index page is accessed.
+2024-03-04 00:12:58,696:INFO:Index page is accessed.
+2024-03-04 00:12:58,703:INFO:Index page is accessed.
+2024-03-04 00:12:58,703:INFO:Number of books fetched: 40
+2024-03-04 00:12:58,703:INFO:Index page is accessed.
+2024-03-04 00:13:00,516:INFO:Index page is accessed.
+2024-03-04 00:13:00,516:INFO:Index page is accessed.
+2024-03-04 00:13:00,521:INFO:Index page is accessed.
+2024-03-04 00:13:00,521:INFO:Number of books fetched: 40
+2024-03-04 00:13:00,521:INFO:Index page is accessed.
+2024-03-04 00:13:00,679:INFO:Index page is accessed.
+2024-03-04 00:13:00,679:INFO:Index page is accessed.
+2024-03-04 00:13:00,684:INFO:Index page is accessed.
+2024-03-04 00:13:00,685:INFO:Number of books fetched: 40
+2024-03-04 00:13:00,685:INFO:Index page is accessed.
+2024-03-04 00:13:55,897:INFO:Index page is accessed.
+2024-03-04 00:13:55,897:INFO:Index page is accessed.
+2024-03-04 00:13:55,903:INFO:Index page is accessed.
+2024-03-04 00:13:55,903:INFO:Number of books fetched: 40
+2024-03-04 00:13:55,903:INFO:Index page is accessed.
+2024-03-04 00:13:57,670:INFO:Index page is accessed.
+2024-03-04 00:13:57,670:INFO:Index page is accessed.
+2024-03-04 00:13:57,676:INFO:Index page is accessed.
+2024-03-04 00:13:57,676:INFO:Number of books fetched: 40
+2024-03-04 00:13:57,676:INFO:Index page is accessed.
+2024-03-04 00:13:57,841:INFO:Index page is accessed.
+2024-03-04 00:13:57,841:INFO:Index page is accessed.
+2024-03-04 00:13:57,846:INFO:Index page is accessed.
+2024-03-04 00:13:57,847:INFO:Number of books fetched: 40
+2024-03-04 00:13:57,847:INFO:Index page is accessed.
+2024-03-04 00:18:04,210:INFO:Index page is accessed.
+2024-03-04 00:18:04,210:INFO:Index page is accessed.
+2024-03-04 00:18:04,219:INFO:Index page is accessed.
+2024-03-04 00:18:04,220:INFO:Number of books fetched: 40
+2024-03-04 00:18:04,220:INFO:Index page is accessed.
+2024-03-04 00:18:06,477:INFO:Index page is accessed.
+2024-03-04 00:18:06,478:INFO:Index page is accessed.
+2024-03-04 00:18:06,483:INFO:Index page is accessed.
+2024-03-04 00:18:06,483:INFO:Number of books fetched: 40
+2024-03-04 00:18:06,483:INFO:Index page is accessed.
+2024-03-04 00:18:06,653:INFO:Index page is accessed.
+2024-03-04 00:18:06,653:INFO:Index page is accessed.
+2024-03-04 00:18:06,663:INFO:Index page is accessed.
+2024-03-04 00:18:06,664:INFO:Number of books fetched: 40
+2024-03-04 00:18:06,664:INFO:Index page is accessed.
+2024-03-04 00:20:06,283:INFO:Index page is accessed.
+2024-03-04 00:20:06,283:INFO:Index page is accessed.
+2024-03-04 00:20:06,289:INFO:Index page is accessed.
+2024-03-04 00:20:06,289:INFO:Number of books fetched: 40
+2024-03-04 00:20:06,289:INFO:Index page is accessed.
+2024-03-04 00:20:09,120:INFO:Index page is accessed.
+2024-03-04 00:20:09,120:INFO:Index page is accessed.
+2024-03-04 00:20:09,130:INFO:Index page is accessed.
+2024-03-04 00:20:09,131:INFO:Number of books fetched: 40
+2024-03-04 00:20:09,131:INFO:Index page is accessed.
+2024-03-04 00:20:09,364:INFO:Index page is accessed.
+2024-03-04 00:20:09,364:INFO:Index page is accessed.
+2024-03-04 00:20:09,369:INFO:Index page is accessed.
+2024-03-04 00:20:09,370:INFO:Number of books fetched: 40
+2024-03-04 00:20:09,370:INFO:Index page is accessed.
+2024-03-04 00:21:34,764:INFO:Index page is accessed.
+2024-03-04 00:21:34,764:INFO:Index page is accessed.
+2024-03-04 00:21:34,770:INFO:Index page is accessed.
+2024-03-04 00:21:34,770:INFO:Number of books fetched: 40
+2024-03-04 00:21:34,770:INFO:Index page is accessed.
+2024-03-04 00:21:36,993:INFO:Index page is accessed.
+2024-03-04 00:21:36,993:INFO:Index page is accessed.
+2024-03-04 00:21:36,998:INFO:Index page is accessed.
+2024-03-04 00:21:36,998:INFO:Number of books fetched: 40
+2024-03-04 00:21:36,998:INFO:Index page is accessed.
+2024-03-04 00:21:37,154:INFO:Index page is accessed.
+2024-03-04 00:21:37,155:INFO:Index page is accessed.
+2024-03-04 00:21:37,160:INFO:Index page is accessed.
+2024-03-04 00:21:37,160:INFO:Number of books fetched: 40
+2024-03-04 00:21:37,160:INFO:Index page is accessed.
+2024-03-04 00:21:37,163:ERROR:unhandled exception: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required., path: http://localhost/logout
+2024-03-04 00:23:55,042:INFO:Index page is accessed.
+2024-03-04 00:23:55,042:INFO:Index page is accessed.
+2024-03-04 00:23:55,054:INFO:Index page is accessed.
+2024-03-04 00:23:55,054:INFO:Number of books fetched: 40
+2024-03-04 00:23:55,054:INFO:Index page is accessed.
+2024-03-04 00:23:57,616:INFO:Index page is accessed.
+2024-03-04 00:23:57,616:INFO:Index page is accessed.
+2024-03-04 00:23:57,624:INFO:Index page is accessed.
+2024-03-04 00:23:57,625:INFO:Number of books fetched: 40
+2024-03-04 00:23:57,625:INFO:Index page is accessed.
+2024-03-04 00:23:57,832:INFO:Index page is accessed.
+2024-03-04 00:23:57,832:INFO:Index page is accessed.
+2024-03-04 00:23:57,837:INFO:Index page is accessed.
+2024-03-04 00:23:57,838:INFO:Number of books fetched: 40
+2024-03-04 00:23:57,838:INFO:Index page is accessed.
+2024-03-04 00:24:56,574:INFO:Index page is accessed.
+2024-03-04 00:24:56,574:INFO:Index page is accessed.
+2024-03-04 00:24:56,579:INFO:Index page is accessed.
+2024-03-04 00:24:56,580:INFO:Number of books fetched: 40
+2024-03-04 00:24:56,580:INFO:Index page is accessed.
+2024-03-04 00:24:58,281:INFO:Index page is accessed.
+2024-03-04 00:24:58,281:INFO:Index page is accessed.
+2024-03-04 00:24:58,286:INFO:Index page is accessed.
+2024-03-04 00:24:58,286:INFO:Number of books fetched: 40
+2024-03-04 00:24:58,286:INFO:Index page is accessed.
+2024-03-04 00:24:58,441:INFO:Index page is accessed.
+2024-03-04 00:24:58,441:INFO:Index page is accessed.
+2024-03-04 00:24:58,446:INFO:Index page is accessed.
+2024-03-04 00:24:58,446:INFO:Number of books fetched: 40
+2024-03-04 00:24:58,446:INFO:Index page is accessed.
+2024-03-04 00:25:43,555:INFO:Index page is accessed.
+2024-03-04 00:25:43,555:INFO:Index page is accessed.
+2024-03-04 00:25:43,564:INFO:Index page is accessed.
+2024-03-04 00:25:43,564:INFO:Number of books fetched: 40
+2024-03-04 00:25:43,564:INFO:Index page is accessed.
+2024-03-04 00:25:45,407:INFO:Index page is accessed.
+2024-03-04 00:25:45,407:INFO:Index page is accessed.
+2024-03-04 00:25:45,412:INFO:Index page is accessed.
+2024-03-04 00:25:45,412:INFO:Number of books fetched: 40
+2024-03-04 00:25:45,413:INFO:Index page is accessed.
+2024-03-04 00:25:45,568:INFO:Index page is accessed.
+2024-03-04 00:25:45,568:INFO:Index page is accessed.
+2024-03-04 00:25:45,573:INFO:Index page is accessed.
+2024-03-04 00:25:45,573:INFO:Number of books fetched: 40
+2024-03-04 00:25:45,574:INFO:Index page is accessed.
+2024-03-04 00:26:30,355:INFO:Index page is accessed.
+2024-03-04 00:26:30,355:INFO:Index page is accessed.
+2024-03-04 00:26:30,360:INFO:Index page is accessed.
+2024-03-04 00:26:30,360:INFO:Number of books fetched: 40
+2024-03-04 00:26:30,360:INFO:Index page is accessed.
+2024-03-04 00:26:32,078:INFO:Index page is accessed.
+2024-03-04 00:26:32,079:INFO:Index page is accessed.
+2024-03-04 00:26:32,084:INFO:Index page is accessed.
+2024-03-04 00:26:32,084:INFO:Number of books fetched: 40
+2024-03-04 00:26:32,084:INFO:Index page is accessed.
+2024-03-04 00:26:32,238:INFO:Index page is accessed.
+2024-03-04 00:26:32,238:INFO:Index page is accessed.
+2024-03-04 00:26:32,243:INFO:Index page is accessed.
+2024-03-04 00:26:32,243:INFO:Number of books fetched: 40
+2024-03-04 00:26:32,243:INFO:Index page is accessed.
+2024-03-04 00:27:13,108:INFO:Index page is accessed.
+2024-03-04 00:27:13,108:INFO:Index page is accessed.
+2024-03-04 00:27:13,114:INFO:Index page is accessed.
+2024-03-04 00:27:13,114:INFO:Number of books fetched: 40
+2024-03-04 00:27:13,114:INFO:Index page is accessed.
+2024-03-04 00:27:13,121:INFO:db is connected.
+2024-03-04 00:27:13,141:INFO:search.
+2024-03-04 00:27:14,919:INFO:Index page is accessed.
+2024-03-04 00:27:14,919:INFO:Index page is accessed.
+2024-03-04 00:27:14,924:INFO:Index page is accessed.
+2024-03-04 00:27:14,925:INFO:Number of books fetched: 40
+2024-03-04 00:27:14,925:INFO:Index page is accessed.
+2024-03-04 00:27:15,079:INFO:Index page is accessed.
+2024-03-04 00:27:15,079:INFO:Index page is accessed.
+2024-03-04 00:27:15,085:INFO:Index page is accessed.
+2024-03-04 00:27:15,085:INFO:Number of books fetched: 40
+2024-03-04 00:27:15,085:INFO:Index page is accessed.
+2024-03-04 00:27:39,147:INFO:Index page is accessed.
+2024-03-04 00:27:39,147:INFO:Index page is accessed.
+2024-03-04 00:27:39,153:INFO:Index page is accessed.
+2024-03-04 00:27:39,153:INFO:Number of books fetched: 40
+2024-03-04 00:27:39,153:INFO:Index page is accessed.
+2024-03-04 00:27:39,159:INFO:db is connected.
+2024-03-04 00:27:39,177:INFO:search.
+2024-03-04 00:27:40,977:INFO:Index page is accessed.
+2024-03-04 00:27:40,977:INFO:Index page is accessed.
+2024-03-04 00:27:40,982:INFO:Index page is accessed.
+2024-03-04 00:27:40,983:INFO:Number of books fetched: 40
+2024-03-04 00:27:40,983:INFO:Index page is accessed.
+2024-03-04 00:27:41,138:INFO:Index page is accessed.
+2024-03-04 00:27:41,138:INFO:Index page is accessed.
+2024-03-04 00:27:41,143:INFO:Index page is accessed.
+2024-03-04 00:27:41,143:INFO:Number of books fetched: 40
+2024-03-04 00:27:41,143:INFO:Index page is accessed.

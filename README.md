@@ -28,6 +28,13 @@ Clone the repository to your local machine.
 Run setup_db.py to initialize the database.
 Start the Flask server by executing shopping.py.
 Access the website through the provided local URL.
+Website Link
+Access the live version of the Kindle Book Shopping Website here: https://cs551p-assessment3.onrender.com/
+
+Maintenance and Testing
+Running the Application Locally: To run the application on your local machine, ensure you have Flask installed and execute the command flask run from the root directory of the project. Your application will start running on localhost.
+Testing: For testing the application, navigate to the feature folder and run the behavior tests to ensure all functionalities are working as expected. These tests cover user interactions and website functionality comprehensively.
+Maintenance: Regularly update the dependencies listed in requirements.txt to their latest versions to ensure security and performance. Check the Flask and SQLite documentation for any updates or security patches.
 Contribution
 This project is developed as part of the CS551P course assessment 2. Contributions and feedback are welcome to improve the website's functionality and user experience.
 

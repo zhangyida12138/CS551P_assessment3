@@ -1,0 +1,20 @@
+* f7a37a8 : env
+* 75fddd3 : setting
+* b951292 : add some test
+* d345938 : add some error handle
+* e484389 : fix search problem
+* 79ae779 : make some change
+* 9adee1f : change base page
+* 67b30d6 : fix some bug
+* 367f2b1 : some change
+* 0ddb3c9 : add some route
+* 786d403 : fix some bug
+* 35cd9b0 : test setuo_db
+* 54c2c84 : setup_db.py created db
+* b4a9ac0 : csv dataset
+* 43b3525 : flask file and db
+* deb1318 : setting
+* 66e25c7 : html files
+* 718afe5 : css filefolder
+* 3da56e8 : environment setting
+* 8b70546 : Initial commit

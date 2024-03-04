@@ -1,3 +1,4 @@
+* 92a8fb0 : change read me
 * f7a37a8 : env
 * 75fddd3 : setting
 * b951292 : add some test
